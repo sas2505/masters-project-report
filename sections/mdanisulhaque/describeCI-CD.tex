@@ -1,0 +1,78 @@
+\subsection{Definition}
+%
+CI/CD come forward with  motive to automate software production via continuous integration and continuous delivery in more frequent and efficient way.
+
+Continuous integration (CI) and continuous delivery (CD) are the base concepts that are allowed to cope up with the any kind of changes, like code change, configurations, data, environments etc for the entire production road\cite{CD}.
+
+Software industries now a days are paying highest intention to automation developments, as because in competitive market who ever deliver product on the fly are much ahead of those who lag in productions. CI/CD is faster than releasing big batches of updates and patches all at once. As any parts are not bound on others work. Also ensures, products are published faster, are more up-to-date, and have improved security and scale able, all of which are important aspects of agile networking.
+
+CI is the process where source is being developed and tested simultaneously in a continuous manner whereas CD provides the mechanism that makes usable version for end users\cite{CDHandsOn}.
+
+“Continuous integration is a coding philosophy and set of practices that drive development teams to implement small changes and check in code to version control repositories frequently. Because most modern applications require developing code in different platforms and tools, the team needs a mechanism to integrate and validate its changes.”\footnote{https://www.infoworld.com/article/3271126/what-is-cicd-continuous-integration-and-continuous-delivery-explained.html}
+
+%
+\subsection{Components}
+%
+A CI/CD pipeline is made up of distinct subsets of tasks that are known as pipeline components. The following are most common pipeline components:
+
+\subsubsection{Development}
+
+Basically it is the start point of the pipeline, whenever any changes are pushed its automatically got triggered. Development phase is dependent on language and technologies, which is prerequisite for decision making before starting deploy-able units. For example, in JAVA tools like Maven or Gradle are necessary to build a JAVA distribution. A packaging phase may include the automated build elements. Taking the JAVA example a step further, if a Docker Image of the JAVA app is needed, the required Docker Compose steps must be called. Build-centric tests, such as unit tests and dependency scanning, can be performed in the build components.\footnote{https://harness.io/blog/continuous-delivery/ci-cd-pipeline/}
+
+
+Compilation is required for programs written in languages like Java, C/C++, C\# or Go, while Ruby, Python, and JavaScript do not. Cloud-native software is usually deployed with Docker, so this stage of the CI/CD pipeline creates Docker containers, regardless of the language. Failure to pass the construct stage indicates a fundamental problem. And for a successful release, a successful development phase is must.\footnote{https://semaphoreci.com/blog/cicd-pipeline}
+
+
+\subsubsection{Testing}
+Testing as name referred, here build product undergo testing. Testing can be done partly or as a whole. But best practice is to test partly as because of failing on part or unit test demolish the need of total integration test, which save both time and effort. Test can be like integration tests, soak tests, load tests, and regression tests, all of them has own significance.\footnote{https://harness.io/blog/continuous-delivery/ci-cd-pipeline/} Integration test is the test where all modules are connected and tested as a whole group. soak tests is more likely test on certain load over some specific period to determine approximation of real time use. Load test is checking response under some specific pressure. Regression tests is used to determine whether its working or not with the new release. There are some more test like  functional tests, unit tests, and performance tests etc. All of them ensure the quality of the solutions. Here main advantage is the early error detection rather then waiting for complete production release. Problems are identified by QA team then reported to the concerns with feedback, than based on the priority respective teams make feasible solution and again these go for testing chain upon successful build.
+
+
+\subsubsection{Release}
+
+Successful release is the prerequisite for successful deployment. Continuous release makes it to grow more confidence in deployment. It is the point where any new or changed features are ready deliver to the repository. Release components are the individual implementations that help achieve Continuous Implementation. Most common release techniques are Rolling, blue/green and canary deployments.\footnote{https://harness.io/blog/continuous-delivery/ci-cd-pipeline/}
+
+   \begin{itemize}
+     \item \textbf{Rolling Deployment} : Rolling deployment works on distributed system, contains multiple server or clouds instance, all of them carry the application simultaneously. But here update took place sequentially, so some may got update earlier then others. Meanwhile some user may experience with the new version and end of circle everyone will get same version. Here rollback is easier but testing needs longer time as it works as one by one release.
+    
+     \item \textbf{Blue-Green Deployment} : Blue-Green deployment consist two deployment units, blue is for staging and green for production. New release are being deployed in blue units and after testing or finalizing, green one is pointed and blue goes to public. Here also rollback is easy but costing is higher as both the unit have same environment.
+     
+     \item \textbf{Canary Deployment} : Canary deployment divides distribution in some sets. New releases are first deployed on a set of servers. And upon their successful feedback this release then deployed on next set, eventually on every set respectively. For example, the first phase would swap 25\% of the nodes, and if successful, the second phase would swap 50\% of the nodes, and the third phase would swap 100\% of the nodes. The stability they offer during a release, as well as the fact that they use less resources than a blue-green deployment, are the reasons for implementing canary deployments. Here the main advantage is the early feedback from the user or tester, which makes the application more efficient \cite{inproceedingsMunch}.
+   \end{itemize}
+
+
+\subsubsection{Deployment}
+
+Deployment is the final step of CI/CD pipeline. As soon as the testing phase validate, it should go for deployment. In CI/CD deployments are small updates that delivered continuously, this process is automated. It removes so much manual efforts. Here version is maintained and added to the solution and further feedback is gathered in correspondence to these versions. Most of the works already been done by previous steps and in deployment it is more likely one time job to configure in a suitable way that will follow upcoming deployments.\footnote{https://cinglevue.com/how-to-build-an-efficient-ci-cd-pipeline/}
+
+
+%
+\subsection{CI-CD on Cloud}
+%
+Here CI/CD on cloud refers, the complete mechanism of the CI/CD are maintained and hosed via cloud service. Although cloud computing has multiple meanings, the most basic definition is a framework that allows and facilitates the provisioning of resources. It can be private or public. There are various cloud CI/CD providers like Azure, AWS, Google cloud etc., all of them has there own services\cite{inproceedings}. The efficient structure of cloud computing is one of the most significant advantages of cloud for CI/CD. This is ideal for CI/CD workloads, which are ephemeral and burst. Cloud services can scale up and down dynamically in response to CI/CD workloads. For enterprises, this provides significant management and cost savings. Enterprise firms do not need to run their own servers, but they do need to scale up as CI/CD workloads grow, and they don't want to spend server resources when they're not in use. Cloud can be private in a scenes that if company has own data center and all other resources to accomplish full pipeline task. Here in some case it might not be possible to facilitate every needs, like the product might need sudden high distribution for the load or limitations of storage power or even speeds for geographic diversity. Private cloud is mostly used for high security and high sensitive data issue. However public cloud host all the solutions, providing high security and scaling facility like load balancing , storage on demand, geographical location based distribution and so on. The hybrid cloud is a more modern approach that combines private and public cloud services. Depending on needs the the system can go for private or public one.The best thing is that cloud provide so many benefits like low costing for the architecture, certified security system, easy data management, high flexibility, low configuration , reliable service, supports from global developers and so on.  \footnote{https://devops.com/cloud-and-devops-ci-cd-and-market-analysis/}
+%
+\subsection{Different Tools for CI-CD on Cloud}
+%
+There are so many tools available for CI/CD on cloud. Namely Azure DevOps, AWS, Google Cloud and so on. All of them has there own significance. 
+%
+\subsubsection{Azure DevOps}
+%
+
+Azure DevOps is the most popular  Software as a Service (SaaS) platform from Microsoft provider. It is flexible as here services can be taken on the base of need. It is platform independent and compatible with any languages. There are various services in Azure such as Azure Repos, Azure Pipelines, Azure Boards, Azure Test Plans, Azure Artifacts etc. It has also a instance of git named Azure git for version control. Azure repo is just take care of it. Azure boards follow the agile methodology and able to prepare reports on bugs or other issues. It also compatible with AWS and Google Cloud. Whole process is as simple as, first we make an organization, then create a new project after that create the pipeline with YML file, next step is authorization and finally approve and run the pipeline. These are the basic steps to configure the Azure pipeline.
+
+%
+\subsubsection{AWS}
+%
+
+AWS CodePipeline is a professional automated continuous distribution service that facilitates automating the release pipelines for fast and stable device and infrastructure updates. Based on the defined release model, CodePipeline automates the develop, test, and deploy phases of the release process whenever there is a code update. This makes possible to offer features and upgrades quickly and consistently. AWS CodePipeline can be seamlessly integrated with third-party platforms like GitHub and many custom plugin. users just have to pay for what they use with AWS CodePipeline. There are no hidden costs or long-term obligations. There are many advantages in AWS such as rapid delivery, configurable workflow, get started fast, easy integration etc.\footnote{https://aws.amazon.com/codepipeline/}
+
+%
+\subsubsection{Google Cloud}
+%
+In the public cloud industry, Google Cloud Platform is one of the most common cloud providers. It offers a variety of managed services, and it makes sense to use Google Cloud's managed CI/CD software if you're solely using Google Cloud.\footnote{https://medium.com/swlh/how-to-ci-cd-on-google-cloud-platform-1e631cded335} One of the core principles of the google cloud platform is its commitment to open-source development support. A lot of the features of GCP are developed by the community and are easy to integrate in the GCP Platform. Which makes it easier to get support for an application. Even though Google got into the cloud market later than its counterparts but their commitment to open-source development is helping them grow their offered features exponentially.  
+%
+
+%
+\subsection{Comparison Azure vs AWS vs Google Cloud}
+%
+
+Azure was first developed in 2010(renamed as ‘Microsoft Azure’ in 2014) , AWS was developed in 2006 and Google Cloud starts in 2011.\footnote{https://intellipaat.com/blog/aws-vs-azure-vs-google-cloud/} For computing service Azure use virtual machines, whereas AWS uses Elastic Compute Cloud(EC2) and google cloud use compute engine. Both Azure and AWS instance are auto scaling and Google Cloud has instance grouping\cite{articleComparison}.For version control Azure use DevOps/GitHub , AWS code commit and Google Cloud use Cloud Source Repositories. In compare for serverless computing Azure used Azure functions, meanwhile AWS used Lambda. However Google cloud used cloud functions. They also have different pricing schemes. In a nutshell, it is much complex for choosing this kind of solution. It mostly depends on application and consumer needs, though all of them has largely similar virtue of workings.  
