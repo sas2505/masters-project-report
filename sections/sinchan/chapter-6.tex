@@ -1,0 +1,112 @@
+\section{Security in CI/CD Pipeline}
+
+\subsection{Conceptual Foundations}
+
+\subsubsection{Encrypted communication}
+
+\textbf{Authors}: Sinchan Bangalore Sheshadri
+
+Encrypted communication can be said to be the communication between two or more endpoints wherein the data transmitted are encrypted using encryption tools and technologies. The key to encrypted communication is the secret and maintaining the secrecy of this secret from external attacks. A secret can be any type of data that is being transmitted
+
+\subsubsection{Secure Sockets Layer (SSL)}
+\textbf{Authors}: Aynura Huseynova, Sinchan Bangalore Sheshadri
+
+Secure Sockets Layer, commonly abbreviated to SSL is an encryption-based security protocol used to ensure privacy and authenticity of internet communication. It had two revisions, namely, SSL 2.0 and SSL 3.0. Due to its security flaws, it was deprecated and replaced by TLS 1.0 and above. Although it is not in use currently, SSL is a term often associated with TLS and certificates in the security domain.\footnotemark
+
+\footnotetext{\href{https://www.globalsign.com/en/blog/ssl-vs-tls-difference}{www.globalsign.com, Accessed 28.07.2021}}
+
+
+
+\subsubsection{Transport Layer Security (TLS)}
+\textbf{Authors}: Aynura Huseynova, Sinchan Bangalore Sheshadri
+
+Transport Layer Security or TLS is a protocol used to provide privacy and data integrity between two communicating applications. TLS consist of two layers:
+
+•	TLS Record Protocol: uses symmetric cryptography for reliable and private connectivity
+
+•	TLS Handshake Protocol: provides connection security by authenticating the identity of the peer using a shared secret while also ensuring that the sharing of a secret is secure, and the negotiation is reliable.\footnotemark
+
+\footnotetext{\href{https://datatracker.ietf.org/doc/html/rfc5246}{www.datatracker.ietf.org, Accessed 28.07.2021}}
+
+TLS has gone through multiple revisions. The latest version at the time of this writing is TLS 1.3.
+
+
+\subsubsection{Public Key Infrastructure}
+\textbf{Authors}: Sinchan Bangalore Sheshadri
+
+Three key security features that need to be ensured is the integrity, authentication, and nonrepudiation. This is possible with the help of Public Key Infrastructure (PKI). As explained by Ray Hunt \cite{962346}, Public Key Infrastructure provides a core framework that helps to combine multiple/different types of components, applications, policies, and practices for ensuring security. It facilitates secure communication between remote users by ensuring a chain of trust. This chain of trust is implemented using digital certificates which are shared and verified by authorities. Following are the key components of a Public Key Infrastructure:
+
+•	Security Policy
+
+•	Certificate Authority
+
+•	Registration Authority
+
+•	Certificate repository and distribution system
+
+•	PKI-enabled applications
+
+\subsubsection{Certification Authority}
+\textbf{Authors}: Sinchan Bangalore Sheshadri
+
+Certification Authority or Certificate Authority is a trusted organization that issues and manages credentials (certificates) and public keys for encryption. Certificate Authority, being a part of the Public Key Infrastructure, communicates with Registration Authority to verify the information of the requestor. Upon successful verification by the Registration Authority, Certification Authority will issue a certificate to the requestor.
+
+
+
+\subsection{Security in DevOps}
+
+\subsubsection{Securing the DevOps environment}
+\textbf{Authors}: Sinchan Bangalore Sheshadri
+
+DevSecOps insists on several principles to secure the development environment and iterates the importance of security throughout the software development lifecycle.
+
+Security in a cloud-native development environment is manageable in an easier way when compared to other types of development environments. The availability of Identity and Access Management (IAM), Access codes and Access control, built-in data protection features, Logging, Monitoring, Analytics tools, and more such features make ensuring the DevSecOps principles possible. But the most important security aspect of a cloud-native development environment is that the services offered by the cloud providers are hosted in a secure private cloud.
+
+With these security features offered by the cloud’s development environment, the emphasis will be to secure the application or the software in development. It is the responsibility of the developer to utilize the security features offered by the cloud provider in their development environment.
+
+
+\subsubsection{HTTP versus HTTPS}
+\textbf{Authors}: Aynura Huseynova, Sinchan Bangalore Sheshadri
+
+
+The Hypertext Transfer Protocol, abbreviated as HTTP is the application layer protocol used in internet communication for sharing hypermedia. HTTP is often subjected to Man-in-the-Middle attacks since the data can be compromised due to the lack of data encryption. As a solution to this problem, HTTPS, Hypertext Transfer Protocol Secure was introduced.
+
+HTTPS dictates the use of SSL or TLS over the underlying transport layer packets. Since SSL was deprecated in 2015[] by the Internet Engineering Task Force (IETF), It is advised to use the more secure TLS. Hence, HTTPS is often HTTP over TLS. With HTTPS, the connection can be secured by encrypting the data using TLS certificates.
+
+When a user visits the domain over HTTPS, the browser and the server will specify the version of TLS protocol that will be used, agree upon a cipher suite and the browser will verify the server’s TLS certificate with the certificate authority that issued it.
+
+The browser encrypts a secret (random data) with its public key and sends it to the server. The server will be able to decrypt this only with its private key. The browser and the server will then create and share session keys by using the secret and random data. Both, the browser, and the server will send a ‘finished’ message which is encrypted using a session key. Symmetric encryption is now achieved. Further transmitted data will be encrypted with this session key. These are the steps involved in a TLS handshake. TLS handshake occurs after a successful Transmission Control Protocol (TCP) connection.
+
+\footnotetext{\href{https://medium.com/plain-and-simple/https-vs-ssl-vs-tls-8a0ad0604276}{medium.com, Accessed 28.07.2021}}
+
+
+\subsubsection{Securing web applications}
+\textbf{Authors}: Sinchan Bangalore Sheshadri
+
+Web applications and websites are subject to multiple attacks as data and communication channels can be compromised at many stages in the content delivery process. Attacks such as Cross-Site Scripting (XSS), Injection Attacks, Fuzzing, Zero-Day Attacks, Distributed Denial-of-Service (DDoS), Man-In-The-Middle Attacks, Brute Force Attacks, and more\footnotemark \space cause disruption to services, data loss, loss of privacy and loss of trust.
+
+The Man-In-The-Middle attack is one of the common attacks that the attacker instigates against a website. This attack can be mitigated by using encrypted communication. Encrypted communication involves the process of verification and validation by using certificates.
+
+In this project, we look to secure the DVD web application’s communication channel, between the development environment and the user (Server and Client) by using TLS certificates to encrypt the application data.
+
+\footnotetext{\href{https://www.infocyte.com/blog/2019/05/01/cybersecurity-101-intro-to-the-top-10-common-types-of-cyber-security-attacks/}{www.infocyte.com, Accessed 28.07.2021}}
+
+
+\subsubsection{Securing databases}
+\textbf{Authors}: Sinchan Bangalore Sheshadri
+
+The database is an integral part of a tech stack. It is imperative that the databases be secured against illicit access throughout the production and deployment stage. In a cloud-native development environment, databases are often bundled with other services that the provider offers.
+
+The security of database can be categorized into three:
+
+•	Database access authentication
+
+•	Secure storage of user credentials
+
+•	Encrypted communication between database and application
+
+The database access authentication mainly concerns the production stage. It is essential that the access is only possible by authorized users. This is achieved by setting up the authentication system using credentials.
+
+Databases are subjected to the storage of sensitive data such as the web application’s user credentials. These credentials must not be hard-coded into the source code as it is a point of compromise.
+
+Encrypted communication between the web application and the database is essential in preventing multiple cyber-attacks. Attacks such as SQL injection, Man-In-The-Middle attack, eavesdropping, and more can be mitigated by incorporating encryption protocols.
