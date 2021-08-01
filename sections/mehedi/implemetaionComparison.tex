@@ -1,0 +1,33 @@
+\section{Implementation Comparison between Azure and AWS [Mohammed Mehedi Hasan]}
+
+Both implementations are using different service from their respective software packages. In some cases, open source software is used as well. Lets talk about those comparison in case of service or tool choice to automate CI/CD pipeline.
+
+\subsection{Version Control}
+
+In Azure, we are using \textbf{Azure git repo} as our repository to maintain our code commit, push, merge and other git workflow. On the other hand, \textbf{GitHub} is used as code repository for AWS implementation.
+
+\subsection{CI/CD Pipeline}
+
+For AWS implementation, \textbf{GitHub Actions} is used instead of AWS services, AWS CodePipeline for CI and AWS CodeDeploy for CD. Compare to AWS, \textbf{Aure Pipelines} is used to create and run CI and CD executions.
+
+\subsection{Testing}
+
+\textbf{Azure Test Plans} is used for test execution, report generations, test analysis in case of Azure CI/CD implementation. Similarly to above two cases, \textbf{GitHub Actions} is responsible for testing activities.
+
+\subsection{IaC}
+
+In this case both implementation are using their built-in services. For AWS implementation, \textbf{AWS CloudFormation} is used. Whereas in Azure, \textbf{ARM} is used to serve as infrastructure as code service.
+
+\subsection{Deployment Target}
+
+In Azure implementation, \textbf{Container Registry} resource is used as deployment target. Similarly in AWS implementaion, \textbf{Amazon Elastic Container Registry(ECR)} service is used for deployment target.
+
+\subsection{Kubernetes Cluster}
+
+\textbf{Azure Kubernetes Service (AKS)} is used as a kubernetes cluster in Azure CI/CD automation. This resource is responsible for load balancing the application as well. On the other hand, \textbf{ECS} is used as kubernetes cluster in AWS which is actually maintained by \textbf{AWS Fargate} service. And for load balancing \textbf{Elastic Load Balancing} is used in AWS.
+
+\subsection{Security}
+
+In AWS, to secure the application usage \textbf{Amazon Route 53} service is being used. For Azure, we need to use \textbf{Kubernetes Ingress nginx} service for security in kubernetes cluster.
+
+In a nutshell, Azure implementation is fully incorporated with all the resources and services provided by Azure DevOps and Portal. Whereas, In AWS implementation Some open source services are used along with AWS services. The two types of design choices are used to see the challenges one can face to implement CI/CD automation. We will discuss about those challenges and solutions in details on next part of the report.
