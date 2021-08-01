@@ -1,0 +1,100 @@
+\section{Cost Analysis of our proposed architecture [Mohammed Mehedi Hasan]}
+
+Cost analysis is one of the important factor for deciding any CI/CD implementation. Different pricing range for different tools influences decision most of the time. Since we have implemented our CI/CD pipeline in both AWS and Azure, the rough cost of using these services are described in this section. All the price calculation is done by monthly basis for using such services from Microsoft and Amazon.
+
+\subsection{Azure}
+
+A variety of resources and services are provided by Microsoft to create a CI/CD pipeline according to the user or organisation needs. For our project, we are using \textbf{Container Registry}, \textbf{Azure Kubernetes Service (AKS)}, \textbf{IP Addresses} and \textbf{Azure DevOps} to create our CI/CD pipeline.
+
+\subsubsection{Container Registry}
+
+We are using \textit{Basic} Tier container registry in \textit{West Europe} Region. Two units are needed for our project, one for Staging and another one for Production environment. Bandwidth for both of the register is upto 60 GB. Pricing for such configuration is \textbf{€12.14}.
+
+\subsubsection{Azure Kubernetes Service (AKS)}
+
+Azure Kubernetes Service (AKS) is configured in \textit{West Europe} region as well. In Azure no one need to worry about master node which is managed by \textit{Cluster Management}. And this feature is free of cost. For our projects we are using two child nodes which defined as \textit{Nodes} in Azure. The configuration for each node is as such \textbf{OS:} \textit{Linux}, \textbf{CPU:} \textit{2 vCPUs}, \textbf{RAM:} \textit{7 GB}, \textbf{Storage:} \textit{14 GB}. This instance configuration is defined as \textbf{DS2 v2} in AKS. Additionaly we are using \textit{Pay as you go} as the payment method. The total price of using this AKS configuration is \textbf{€167.45}.
+
+\subsubsection{IP Addresses}
+
+In our project we are using one \textit{Static IP Address}. This is also configured in \textit{West Europe} region with type as \textit{Basic (Classic)}. The cost of this resource is \textbf{€2.22}.
+
+\subsubsection{Azure DevOps}
+
+We are using Basic plan for Azure DevOps. \textit{5 users} are defined as Users in our project which is free in Azure DevOps. We are using \textit{1 Paid} Microsoft Hosted Pipeline in our project as well. This facilitation is priced at \textbf{€33.73}
+
+Lastly, all of this resources are used in monthly basis with the price of \textbf{€215.53} in total.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{ |c|c|c|c|  }
+     \hline
+     \multicolumn{3}{|c|}{Microsoft Azure Estimate} \\
+     \hline
+     Service type & Region & Estimated monthly cost\\
+     \hline
+     Container Registry   & West Europe   &   €12.14\\
+     Azure Kubernetes Service (AKS)&   West Europe  & €167.45\\
+     IP Addresses &West Europe & €2.22\\
+     Azure DevOps    & &  €33.73\\
+     \hline
+     \hline
+      &    Total&€215.53\\
+     \hline
+    \end{tabular}
+    \caption{Monthly Pricing in Azure}
+    \label{tab:table_1}
+\end{table}
+
+This pricing calculation is calculated by \textit{Azure Pricing Calculator} \footnote{https://azure.microsoft.com/en-us/pricing/calculator/} tool.
+
+\subsection{AWS}
+
+AWS provides a lot of services for creating a CI/CD pipeline. In our project we are using \textbf{Amazon Elastic Container Registry(ECR)}, \textbf{AWS Fargate}, \textbf{AWS CloudFormation}, \textbf{Elastic Load Balancing} and \textbf{Amazon Route 53} services.
+
+\subsubsection{Amazon Elastic Container Registry(ECR)}
+
+We are using elastic container registry (ECR) from \textit{EU (Frankfurt)} region. Amount of data storage is \textit{50 GB per month}. Inbound data transfer per month \textit{100} and Outbound data transfer per month is \textit{100}. The cost of this configuration is \textit{€11.72}
+
+\subsubsection{AWS Fargate}
+
+Fargte is used in our application to maintain ECS services. it is configured in \textit{EU (Frankfurt)} region. We are using \textit{2} pods per day for our project. Each task is running for \textit{10 minutes}. Also \textit{2 vCPUs} with \textit{8 GB} ram and \textit{40 GB} storage is allocated for ECS. Two such configuration is needed for staging and production environment. The total price of using this is \textbf{€2.33}.
+
+\subsubsection{AWS CloudFormation}
+
+CloudFormation is also configured in \textit{EU (Frankfurt)} region. As a configuration we are providing \textit{50} third party resources per month with \textit{8} operation per resources in a day. Since we are using two differernt environment(Staging and Production) two such configured CloudFormation is needed. The cost of this services is \textbf{€36.15}.
+
+\subsubsection{Elastic Load Balancing}
+
+\textit{EU (Frankfurt)} is used as region for elastic load balancing. We are using \textit{1} application load balancer for our project. \textit{800 Mb per per hour} data is processed EC2 Instances and IP addresses as target. This service is priced at \textbf{€20.54}
+
+\subsubsection{Amazon Route 53}
+
+\textit{EU (Frankfurt)} is configured as region for amazon route 53. We are using \textit{1} hosted zone and basic checks within AWS for our project. This service is priced at \textbf{€47.36}
+
+Lastly, all of this resources are used in monthly basis with the price of \textbf{€118.10} in total.
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{ |c|c|c|c|  }
+     \hline
+     \multicolumn{3}{|c|}{AWS Estimate} \\
+     \hline
+     Service type & Region & Estimated monthly cost\\
+     \hline
+     Elastic Container Registry(ECR)  & EU (Frankfurt)   &   €11.72\\
+     AWS Fargate&   EU (Frankfurt)  & €2.33\\
+     AWS CloudFormation &EU (Frankfurt) & €36.15\\
+     Elastic Load Balancing   &EU (Frankfurt) &  €20.54\\
+     Amazon Route 53    &EU (Frankfurt) &  €47.36\\
+     \hline
+     \hline
+     &    Total&€118.10\\
+     \hline
+    \end{tabular}
+    \caption{Monthly Pricing in AWS}
+    \label{tab:table_2}
+\end{table}
+
+This pricing calculation is calculated by \textit{AWS Pricing Calculator} \footnote{https://calculator.aws/} tool.
+
+AWS is showing as cheaper in cost compared to Azure. One of pricing factor is in Azure implementation we are using DevOps for our CI pipeline which has a monthly cost of ~35 euro whereas in AWS implementation GitHub Action is used which is free of charge.
