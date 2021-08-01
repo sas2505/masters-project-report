@@ -1,4 +1,21 @@
 \subsection{Overview of the implementation architecture[Md Jahidul Haque]}\label{sec:arch-aws}
+In order to implement the CI/CD pipeline for our spring boot application, we needed a technology to choose for the repository management. In this case, we used the GitHub Actions for the repository management. Unlike codeCommit from AWS, Github Action is free to use and this way we cover up our cost of implementation. We have used GitHub's DSl to setup the configuration scripts in {{.yml}} files. 
+
+The CI is managed via the {{.yml}} file of our code base. To simplify our tasks for automating the infrastructure objects we used node package manager(npm) to setup the necessary commands for the pipeline.
+
+The CD pipeline of the SDLC means the automation of the release processes which are related with automatic deployment environment, network configuration and infrastructure object creation. For automating deployment environment, Github actions can be used to describe the environment definitions to create resources that are needed for the application. Then other batch jobs execute deployment environment and test the application via acceptance testing. 
+
+After successful deployment, the infrastructure objects creation are defined via CloudFomation's  cloud development kit(CDK). In this CDK, we can define Java classes for describing the infrastructure objects and then that objects can be compiled via AWS's CLI. All the infrastucture automation commands is included in the Github actions so that infrastructure objects can automatically be created via {{.yml}} scripts.
+
+
+
+
+
+
+
+
+
+
 
 In our implementation, we used several technology to automate the software release. Beside using Github Actions, we also used docker file to create deployment environment and AWS CloudFormation for continuous delivery. The figure ~\ref{fig:ci-cd} describes all the github steps that we created in the pipeline implementation for AWS based spring boot application.
 

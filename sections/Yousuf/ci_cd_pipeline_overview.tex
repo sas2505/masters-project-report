@@ -1,5 +1,5 @@
 
-\section{Implementation of CI/CD pipeline via GitHub Actions for AWS [ Md Yousuf Ali Khan]}\label{sec:chapter_1}
+\subsection{Using GitHub Actions for AWS to implement CI/CD [ Md Yousuf Ali Khan]}\label{sec:chapter_1}
 For Continuous Integration and Continuous deployment, we used GitHub actions. Github action is event-driven means we can run series of tasks in a reaction to a specific event. An event triggers a workflow, which contains a job. A job consists of multiple steps which control the order of actions.
 
 Workflows can contain multiple jobs which can be triggered or scheduled based on events. An event can be internal or external. A job is a set of steps. Workflow with multiple jobs by default will run those jobs on parallel, but we can change this behavior and make it sequential by making a job dependent on other jobs. This will also ensure that if a parent job fails, all the other jobs dependent on that job will not even run. The main goal of a Step is to run commands in a job. In comparison, actions are standalone commands that steps are made of. 

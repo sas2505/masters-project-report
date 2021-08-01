@@ -1,0 +1,80 @@
+
+
+\subsection{Framework JUnit for automated testing}\label{sec:Framework JUnit}
+
+\textit{Author: Wakeel Khan}
+
+JUnit\footnote{https://junit.org/junit5/docs/current/user-guide/} is an open-source project developed for the purpose of writing and running test
+cases for Java programs by Kent Beck, Erich Gamma. In the case of web apps, JUnit is used to test a server with the application. This framework creates a relationship between
+the process of development and testing.
+The concept of "first testing then coding" is encouraged by Junit. It focuses on creating
+such test cases for a piece of code that can be tested before the implementation of this
+code in the application. This technique is like "test a little, code a little, test a little,
+code a little." This way of testing helps the developer by reducing the time that is wasted
+on finding and removing the bugs after the code is implemented and thus the overall
+productivity of programmer increases.
+
+\subsubsection{Features of Junit:}
+\begin{itemize}
+\item Provides annotations to classify methods for testing.  
+\item Provides assertions for testing results.
+\item Provides test runners for test runs.
+\item Tests by JUnit allow you to write codes faster, which improves efficiency.
+\item JUnit is very basic. It is less difficult and needs less time.
+\end{itemize}
+
+
+\subsubsection{Workflow of Junit:}
+
+CI/CD pipeline usually contains a test job that check the code and points out any errors if present. In case of problems, the test will fail and hence the pipeline also fails. This failure will create a notification for the user. In this scenario the developer handling the merge requests will fix the error by checking the job logs to point out that where did the test failed.
+
+GitLab makes it easier to figure out the failures quickly by showing a report to the user including information about failure. So the user does not need to go through the entire log history of job. This functionality is attained by configuring the job so it can utilize unit test reports. But currently it has a limitation because on those test reports are supported
+that are written in JUnit report format. \par
+
+Consider the following workflow:
+
+
+\begin{itemize}
+\item Your project uses GitLab CI/CD and our master branch is the main branch and
+pipelines makes sure that everything is going smooth.
+\item If a merging request is sent by someone from the team, red icon notifies the pipeline
+in case of failure of test. You need to do thorough searching in job logs to know the
+reason behind the failure of test, usually containing multiples of lines, to investigate
+further.
+\item Configure Unit test reports and immediately collect and display them through Git-
+Lab in the merge request. No more digging inside the work logs.
+\item Your workflow for development and debugging is simpler, quicker, and more efficient. 
+\end{itemize}
+%\footnote{https://docs.gitlab.com/ee/ci/unit_test_reports.html}
+
+\subsubsection{How Junit Works:}
+
+All XML files of the JUnit \footnote{https://junit.org/junit5/docs/current/user-guide/} report format are uploaded by GitLab Runners to GitLab as artifacts. After that your visits to merge requests lets GitLab begin to compare JUnit report format XML files of the head with base branch. where,
+
+\begin{itemize}
+\item Master branch used as a base branch (target branch) 
+\item Source branch used as a head branch(each merge request in pipeline)
+\end{itemize}
+
+The report window contains a summary of the number of tests that failed, the number
+of errors, and the number of errors corrected. If the comparison cannot be made because
+the basic branch data is not available, the control panel simply displays the list of failed
+tests for the head.
+
+\textbf{Types of result:}
+
+\begin{itemize}
+\item \textbf{Newly failed tests:} These test cases that took place in the base branch and failed
+in the head branch.
+\item \textbf{Newly encountered errors:} Test cases that were passed in the base branch and
+failed due to a test failure in the head branch.
+\item \textbf{Existing failures:} These test cases that took place in the base branch and failed
+in the head branch.
+\item \textbf{Resolved failures:} These test cases that took place in the base branch and failed
+in the head branch. 
+\end{itemize}
+%\footnote{https://docs.gitlab.com/ee/ci/unit_test_reports.html}
+
+
+
+

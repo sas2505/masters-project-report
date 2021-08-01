@@ -1,0 +1,72 @@
+
+\subsection{Scope of testing in Continuous Integration / Continuous Deployment}\label{sec:Scope of Continuous Integration / Continuous Deployment}
+
+\textit{Author: Wakeel Khan}
+
+\subsubsection{Scope of testing in Continuous Integration(CI):}
+
+Let's say we have multiple developers working on the same application each of them
+has their own feature or bug fix that they are working on and they are all contributing
+by moving their code into the same code repository to the same application. The code
+repository could be a version control system like GitLab, when a developer pushes a code
+to the repository it is linked to a build management system like Jenkins for instance
+that takes the code and builds it if your application is based on java then you can think
+of this as a jar file since there are multiple developers pushing their code to the same
+application. We want to make sure it builds properly and does not introduce any new
+problems into the application, so we can configure the build system to run tests on the
+build package through testing framework which can test your application Api's or web
+interfaces. Once we have successfully passed the tests, we can confirm that the build cycle
+is complete. This whole process of providing the development and working environments
+to multiple developers so they can work simultaneously on the same product at same time
+without effecting the working and problem-solving process of others is called continuous
+integration. \par
+
+Continuous integration overcome the problem of conflicts error between developers, best
+approach is that developer needs to push their work on the repository on daily basis. This
+scenario is useful in the cases when the developers are making frequent commits because
+here it is easier to resolve the problems and conflicts." \cite{larman2004agile}
+
+
+\subsubsection{Scope of testing in Continuous Deployment(CD):}
+
+Continuous Delivery (CD) is the method of as quickly as possible bringing new build into
+the hands of user. It is the next step after CI and is an approach used to minimize the
+risks involved in releasing software application and its new functions. Releasing software
+updates is very painful and time-taken process. Continuous deployment eliminates the
+costs and efforts associated with this process by ensuring that any alteration made to an
+application's underlying code is releasable, which ensures that each upgrade is smaller and
+can be delivered more easily to users. Teams can make their development process more
+effective, less costly, and can get input from users faster by making releases less drastic
+events that can be done on demand whenever new code is available. By simply rolling
+out the next update, if bugs are found in development, they can be squashed easily. \par
+
+
+According to a researcher, many companies have adopted continuous deployment because
+it provides emphasize upon rapid feedback, recurring deployment for the sake of customer
+satisfaction as well as enhancing the quality and productivity." \cite{c12c3fdcbeb64c018fb3b6dadcd2c936} 
+
+\subsubsection{Role of Automated Testing in CI/CD Pipeline:}
+
+
+When the latest piece of software has been developed, it must be developed and then
+carefully reviewed to ensure that it satisfies all the initial business requirements. There
+are different testing methodologies that can be used to ensure that an application works
+properly and provide desired results, covering everything from functional tests to performance
+tests. \par
+
+According to a researcher Today's CI/CD pipeline is a collection of many technologies
+that ensures the highest quality product reaches production". \cite{wolf2016automated} \par
+
+The main objective of Continuous Integration/Continuous Delivery (CI/CD) pipeline
+development is to gather all the teams(development, testing, operations) involved in
+Information Technology (IT) project on same level and streamline the process of the
+automated software release. Automation is the foremost objective. \par
+
+
+Automated provisioning of the environment allows teams with only a few clicks to handle
+test environments. Even the latest versions of browsers, applications, and resolution
+settings can include the necessary automated testing tool, ensuring Quality Assurance
+(QA) teams will avoid having to spin up, manage, or fully tear down environments.
+Anything from unit test to system test and even environmental provisioning in the software
+development cycle should be automated. 
+
