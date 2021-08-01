@@ -11,7 +11,13 @@ Encrypted communication can be said to be the communication between two or more 
 \subsubsection{Secure Sockets Layer (SSL)}
 \textbf{Authors}: Aynura Huseynova, Sinchan Bangalore Sheshadri
 
-Secure Sockets Layer, commonly abbreviated to SSL is an encryption-based security protocol used to ensure privacy and authenticity of internet communication. It had two revisions, namely, SSL 2.0 and SSL 3.0. Due to its security flaws, it was deprecated and replaced by TLS 1.0 and above. Although it is not in use currently, SSL is a term often associated with TLS and certificates in the security domain.\footnotemark
+Secure Sockets Layer, commonly abbreviated to SSL is an encryption-based security protocol used to ensure security, privacy and authenticity on internet's communication channel.
+
+When a computer connects to a website that is using an SSL, the computer’s web browser will ask the website to identify itself. The web server will send a copy of its SSL certificate to the computer. SSL certificate is a digital certificate that is used to authenticate the identity of a website. It is used to verify that the website you are visiting is trustworthy. The computer’s browser will check to make sure that it is a valid certificate. If it validates, it will send an 'ok' message to the web server. The web server will respond back with an acknowledgment to an SSL session. After all these steps are complete, encrypted data can now be exchanged between the computer and the web server.\footnotemark
+
+\footnotetext{\href{https://www.venafi.com/education-center/ssl/how-to-check-ssl-certificate}{www.venafi.com, Accessed 30.07.2021}}
+
+It had two revisions, namely, SSL 2.0 and SSL 3.0. Due to its security flaws, it was deprecated and replaced by TLS 1.0 and above. Although it is not in use currently, SSL is a term often associated with TLS and certificates in the security domain.\footnotemark
 
 \footnotetext{\href{https://www.globalsign.com/en/blog/ssl-vs-tls-difference}{www.globalsign.com, Accessed 28.07.2021}}
 
@@ -22,7 +28,7 @@ Secure Sockets Layer, commonly abbreviated to SSL is an encryption-based securit
 
 Transport Layer Security or TLS is a protocol used to provide privacy and data integrity between two communicating applications. TLS consist of two layers:
 
-•	TLS Record Protocol: uses symmetric cryptography for reliable and private connectivity
+•	TLS Record Protocol: uses symmetric cryptography for reliable and private connectivity. It ensures the confidentiality (which is the prevention of spying on what you are doing) and integrity (which is the prevention of injected advertising or tracking cookies). 
 
 •	TLS Handshake Protocol: provides connection security by authenticating the identity of the peer using a shared secret while also ensuring that the sharing of a secret is secure, and the negotiation is reliable.\footnotemark
 
@@ -47,9 +53,14 @@ Three key security features that need to be ensured is the integrity, authentica
 •	PKI-enabled applications
 
 \subsubsection{Certification Authority}
-\textbf{Authors}: Sinchan Bangalore Sheshadri
+\textbf{Authors}: Aynura Huseynova, Sinchan Bangalore Sheshadri
 
-Certification Authority or Certificate Authority is a trusted organization that issues and manages credentials (certificates) and public keys for encryption. Certificate Authority, being a part of the Public Key Infrastructure, communicates with Registration Authority to verify the information of the requestor. Upon successful verification by the Registration Authority, Certification Authority will issue a certificate to the requestor.
+Certification Authority or Certificate Authority is a trusted organization that issues and manages credentials (certificates) and public keys for encryption.
+
+A digital certificate is a digital file. Similar to a driving license that identifies you, the people who are visiting the website can verify mathematically and cryptographically with the digital certificate.
+
+Certificate Authority, being a part of the Public Key Infrastructure, communicates with Registration Authority to verify the information of the requestor. Upon successful verification by the Registration Authority, Certification Authority will issue a certificate to the requestor.
+
 
 
 
@@ -69,7 +80,7 @@ With these security features offered by the cloud’s development environment, t
 \textbf{Authors}: Aynura Huseynova, Sinchan Bangalore Sheshadri
 
 
-The Hypertext Transfer Protocol, abbreviated as HTTP is the application layer protocol used in internet communication for sharing hypermedia. HTTP is often subjected to Man-in-the-Middle attacks since the data can be compromised due to the lack of data encryption. As a solution to this problem, HTTPS, Hypertext Transfer Protocol Secure was introduced.
+The Hypertext Transfer Protocol, abbreviated as HTTP is the application layer (layer 7) protocol used in internet communication for sharing hypermedia. HTTP transmits the data in plain text. It is often subjected to Man-in-the-Middle attacks since the data can be compromised due to the lack of data encryption. As a solution to this problem, HTTPS, Hypertext Transfer Protocol Secure was introduced.
 
 HTTPS dictates the use of SSL or TLS over the underlying transport layer packets. Since SSL was deprecated in 2015[] by the Internet Engineering Task Force (IETF), It is advised to use the more secure TLS. Hence, HTTPS is often HTTP over TLS. With HTTPS, the connection can be secured by encrypting the data using TLS certificates.
 
